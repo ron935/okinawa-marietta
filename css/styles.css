@@ -1271,14 +1271,14 @@ section { padding: 5rem 0; }
 
   /* Newsletter */
   .newsletter-form { flex-direction: column; }
+
+  /* Tel links — clickable on mobile */
+  .tel-link { pointer-events: auto; cursor: pointer; }
 }
 
 /* Tel links — plain text on desktop, clickable on mobile */
 .tel-link { pointer-events: none; color: inherit; cursor: default; text-decoration: none; }
 .tel-link.phone-btn { pointer-events: auto; cursor: pointer; }
-@media (max-width: 768px) {
-  .tel-link { pointer-events: auto; cursor: pointer; }
-}
 
 /* Order Dropdown */
 .order-dropdown { position: relative; display: inline-block; }
