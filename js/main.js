@@ -225,18 +225,28 @@ function closeModal() {
   if (overlay) overlay.classList.remove('active');
 }
 
-/* --- Menu Filter --- */
+/* --- Menu Filter / Tabs --- */
 function initMenuFilter() {
   const buttons = document.querySelectorAll('.menu-nav-btn');
   if (!buttons.length) return;
 
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
-      const cat = btn.dataset.filter;
-
       buttons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
+      // Image-based menu tabs
+      if (btn.dataset.menu) {
+        document.querySelectorAll('.menu-images').forEach(panel => {
+          panel.style.display = 'none';
+        });
+        const target = document.getElementById('menu-' + btn.dataset.menu);
+        if (target) target.style.display = '';
+        return;
+      }
+
+      // Legacy text-based filter
+      const cat = btn.dataset.filter;
       document.querySelectorAll('.menu-category').forEach(section => {
         if (cat === 'all' || section.dataset.category === cat) {
           section.style.display = '';

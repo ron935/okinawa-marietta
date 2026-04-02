@@ -13,8 +13,8 @@ html {
 
 body {
   font-family: 'Open Sans', sans-serif;
-  background: #2A2A2A;
-  color: #e0e0e0;
+  background: #000;
+  color: #fff;
   line-height: 1.7;
   overflow-x: hidden;
 }
@@ -52,7 +52,7 @@ h4 { font-size: 1.1rem; }
 .section-heading { margin-bottom: .75rem; }
 
 .section-sub {
-  color: #aaa;
+  color: #ddd;
   max-width: 640px;
   margin-bottom: 2.5rem;
 }
@@ -117,14 +117,14 @@ h4 { font-size: 1.1rem; }
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(42,42,42,.92);
+  background: rgba(0,0,0,.92);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255,255,255,.06);
   transition: background .3s, box-shadow .3s;
 }
 .header.scrolled {
-  background: rgba(34,34,34,.98);
+  background: rgba(0,0,0,.98);
   box-shadow: 0 2px 20px rgba(0,0,0,.5);
 }
 
@@ -154,7 +154,7 @@ h4 { font-size: 1.1rem; }
   align-items: center;
 }
 .nav-links a {
-  color: #ccc;
+  color: #eee;
   font-size: .9rem;
   font-weight: 500;
   position: relative;
@@ -221,6 +221,175 @@ h4 { font-size: 1.1rem; }
 .nav-overlay.active { opacity: 1; visibility: visible; }
 
 /* ========================================
+   NAV EXTRAS (phone + social)
+   ======================================== */
+.nav-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  background: #AEC240;
+  color: #1a1a1a !important;
+  padding: .45rem 1rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: .85rem;
+  font-family: 'Poppins', sans-serif;
+  transition: background .25s;
+  white-space: nowrap;
+}
+.nav-phone::after { display: none !important; }
+.nav-phone:hover { background: #8BA830; color: #1a1a1a !important; }
+.nav-phone i { font-size: .8rem; }
+
+.nav-social {
+  font-size: 1.1rem;
+  color: #eee !important;
+  padding: .25rem !important;
+}
+.nav-social::after { display: none !important; }
+.nav-social:hover { color: #AEC240 !important; }
+
+/* ========================================
+   ORDER BAR (homepage top)
+   ======================================== */
+.order-bar {
+  background: #000;
+  padding: 2.5rem 0;
+  padding-top: calc(80px + 2.5rem);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.order-columns {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.order-col {
+  text-align: center;
+}
+.order-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: .75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.order-box-btn {
+  display: inline-block;
+  background: #AEC240;
+  color: #1a1a1a;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: .9rem;
+  padding: .7rem 2rem;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  transition: background .25s, transform .25s;
+}
+.order-box-btn:hover {
+  background: #8BA830;
+  color: #1a1a1a;
+  transform: translateY(-2px);
+}
+.order-col-btns {
+  display: flex;
+  gap: .75rem;
+  justify-content: center;
+}
+
+/* ========================================
+   FOOD ROW (3 photos across, homepage)
+   ======================================== */
+.food-row {
+  padding: 0;
+}
+.food-row-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+.food-row-item {
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+.food-row-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s;
+}
+.food-row-item:hover img {
+  transform: scale(1.05);
+}
+
+/* ========================================
+   NAME SECTION (Okinawa Marietta + phone)
+   ======================================== */
+.name-section {
+  background: #000;
+  padding: 3rem 0;
+}
+.restaurant-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+.phone-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: #AEC240;
+  color: #1a1a1a !important;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: .75rem 2rem;
+  border-radius: 4px;
+  transition: background .25s, transform .25s;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.phone-btn:hover {
+  background: #8BA830;
+  color: #1a1a1a !important;
+  transform: translateY(-2px);
+}
+.phone-btn i { font-size: 1rem; }
+
+/* ========================================
+   FOOD GALLERY (homepage bottom)
+   ======================================== */
+.food-gallery-home {
+  background: #000;
+  padding: 0 0 3rem;
+}
+.food-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.food-gallery-item {
+  aspect-ratio: 4/3;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #111;
+}
+.food-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s;
+}
+.food-gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* ========================================
    HERO
    ======================================== */
 .hero {
@@ -266,7 +435,7 @@ h4 { font-size: 1.1rem; }
 
 .hero p {
   font-size: 1.15rem;
-  color: #aaa;
+  color: #ddd;
   margin: 1.25rem 0 2rem;
   max-width: 540px;
 }
@@ -314,7 +483,7 @@ h4 { font-size: 1.1rem; }
   font-weight: 700;
   text-decoration: underline;
 }
-.announce-bar a:hover { color: #333;  }
+.announce-bar a:hover { color: #333; }
 .announce-bar i { margin-right: .25rem; }
 
 /* ========================================
@@ -340,7 +509,7 @@ h4 { font-size: 1.1rem; }
 }
 .showcase-item h4 {
   font-size: .95rem;
-  color: #e0e0e0;
+  color: #fff;
   font-weight: 600;
 }
 
@@ -348,7 +517,7 @@ h4 { font-size: 1.1rem; }
    INFO BAR
    ======================================== */
 .info-bar {
-  background: #333;
+  background: #111;
   border-top: 1px solid rgba(255,255,255,.06);
   border-bottom: 1px solid rgba(255,255,255,.06);
   padding: 2.5rem 0;
@@ -369,17 +538,17 @@ h4 { font-size: 1.1rem; }
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: .25rem;
-  color: #999;
+  color: #ccc;
 }
-.info-item p { color: #e0e0e0; font-size: .95rem; }
+.info-item p { color: #fff; font-size: .95rem; }
 
 /* ========================================
    SECTIONS — Shared
    ======================================== */
 section { padding: 5rem 0; }
-.section-dark { background: #2A2A2A; }
-.section-darker { background: #222; }
-.section-alt { background: #2E2E2E; }
+.section-dark { background: #000; }
+.section-darker { background: #000; }
+.section-alt { background: #0a0a0a; }
 
 .text-center { text-align: center; }
 .mx-auto { margin-left: auto; margin-right: auto; }
@@ -393,7 +562,7 @@ section { padding: 5rem 0; }
   gap: 2rem;
 }
 .feature-card {
-  background: #333;
+  background: #111;
   border: 1px solid rgba(255,255,255,.06);
   border-radius: 8px;
   padding: 2rem;
@@ -417,7 +586,7 @@ section { padding: 5rem 0; }
   font-size: 1.5rem;
   color: #AEC240;
 }
-.feature-card p { color: #999; font-size: .9rem; }
+.feature-card p { color: #ccc; font-size: .9rem; }
 
 /* ========================================
    HOURS SECTION
@@ -438,11 +607,11 @@ section { padding: 5rem 0; }
   font-size: .95rem;
 }
 .hours-table td:first-child { font-weight: 600; color: #fff; }
-.hours-table td:last-child { text-align: right; color: #aaa; }
+.hours-table td:last-child { text-align: right; color: #ddd; }
 .hours-table tr.closed td:last-child { color: #e53935; }
 
 .hours-card {
-  background: #333;
+  background: #111;
   border: 1px solid rgba(255,255,255,.06);
   border-radius: 8px;
   padding: 2.5rem;
@@ -465,7 +634,7 @@ section { padding: 5rem 0; }
   align-items: center;
   gap: 1rem;
   padding: 1.25rem 2rem;
-  background: #333;
+  background: #111;
   border: 1px solid rgba(255,255,255,.08);
   border-radius: 10px;
   color: #fff;
@@ -481,7 +650,7 @@ section { padding: 5rem 0; }
 }
 .order-btn i { font-size: 1.5rem; color: #AEC240; flex-shrink: 0; }
 .order-btn strong { display: block; font-size: 1rem; font-weight: 600; }
-.order-btn small { display: block; font-size: .78rem; color: #888; font-weight: 400; margin-top: .1rem; }
+.order-btn small { display: block; font-size: .78rem; color: #bbb; font-weight: 400; margin-top: .1rem; }
 .order-btn-accent {
   background: #AEC240;
   border-color: #AEC240;
@@ -508,7 +677,7 @@ section { padding: 5rem 0; }
 .about-img {
   border-radius: 8px;
   overflow: hidden;
-  background: #333;
+  background: #111;
   aspect-ratio: 4/3;
   display: flex;
   align-items: center;
@@ -521,7 +690,7 @@ section { padding: 5rem 0; }
   text-align: center;
   padding: 2rem;
 }
-.about-text p { color: #aaa; margin-bottom: 1rem; }
+.about-text p { color: #ddd; margin-bottom: 1rem; }
 .about-text p:last-child { margin-bottom: 0; }
 
 .values-grid {
@@ -542,7 +711,7 @@ section { padding: 5rem 0; }
   flex-shrink: 0;
 }
 .value-item h4 { margin-bottom: .25rem; font-size: 1rem; }
-.value-item p { color: #999; font-size: .85rem; }
+.value-item p { color: #ccc; font-size: .85rem; }
 
 /* ========================================
    MENU PAGE
@@ -556,10 +725,10 @@ section { padding: 5rem 0; }
 }
 .menu-nav-btn {
   padding: .55rem 1.25rem;
-  background: #333;
+  background: #111;
   border: 1px solid rgba(255,255,255,.08);
   border-radius: 4px;
-  color: #ccc;
+  color: #eee;
   font-family: 'Poppins', sans-serif;
   font-size: .8rem;
   font-weight: 600;
@@ -595,19 +764,37 @@ section { padding: 5rem 0; }
   justify-content: space-between;
   align-items: baseline;
   padding: .85rem 1rem;
-  background: #333;
+  background: #111;
   border-radius: 6px;
   border: 1px solid rgba(255,255,255,.04);
   transition: border-color .25s;
 }
 .menu-item:hover { border-color: rgba(174,194,64,.2); }
-.menu-item-name { color: #e0e0e0; font-size: .9rem; font-weight: 500; }
+.menu-item-name { color: #fff; font-size: .9rem; font-weight: 500; }
 .menu-item-price { color: #AEC240; font-weight: 700; font-size: .9rem; white-space: nowrap; margin-left: 1rem; }
 
 .menu-item-desc {
   color: #777;
   font-size: .8rem;
   margin-top: .15rem;
+}
+
+/* ========================================
+   MENU IMAGES (tabbed layout)
+   ======================================== */
+.menu-img-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.menu-img-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,.08);
+  background: #fff;
 }
 
 /* ========================================
@@ -622,7 +809,7 @@ section { padding: 5rem 0; }
   aspect-ratio: 4/3;
   border-radius: 8px;
   overflow: hidden;
-  background: #333;
+  background: #111;
   border: 1px solid rgba(255,255,255,.06);
   display: flex;
   align-items: center;
@@ -652,7 +839,7 @@ section { padding: 5rem 0; }
   gap: 3rem;
 }
 .contact-info-card {
-  background: #333;
+  background: #111;
   border: 1px solid rgba(255,255,255,.06);
   border-radius: 8px;
   padding: 2rem;
@@ -674,12 +861,12 @@ section { padding: 5rem 0; }
   text-align: center;
 }
 .contact-info-item h4 { margin-bottom: .15rem; font-size: .95rem; }
-.contact-info-item p { color: #aaa; font-size: .9rem; }
-.contact-info-item a { color: #aaa; }
+.contact-info-item p { color: #ddd; font-size: .9rem; }
+.contact-info-item a { color: #ddd; }
 .contact-info-item a:hover { color: #AEC240; }
 
 .contact-form {
-  background: #333;
+  background: #111;
   border: 1px solid rgba(255,255,255,.06);
   border-radius: 8px;
   padding: 2.5rem;
@@ -696,7 +883,7 @@ section { padding: 5rem 0; }
   display: block;
   font-size: .85rem;
   font-weight: 600;
-  color: #ccc;
+  color: #eee;
   margin-bottom: .4rem;
 }
 .form-group input,
@@ -704,10 +891,10 @@ section { padding: 5rem 0; }
 .form-group select {
   width: 100%;
   padding: .75rem 1rem;
-  background: #3E3E3E;
+  background: #1a1a1a;
   border: 1px solid rgba(255,255,255,.1);
   border-radius: 4px;
-  color: #e0e0e0;
+  color: #fff;
   font-family: 'Open Sans', sans-serif;
   font-size: .9rem;
   transition: border-color .25s;
@@ -761,8 +948,8 @@ section { padding: 5rem 0; }
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: #3E3E3E;
-  color: #aaa;
+  background: #1a1a1a;
+  color: #ddd;
   font-size: 1.1rem;
   transition: all .25s;
 }
@@ -777,7 +964,7 @@ section { padding: 5rem 0; }
 .contact-form-home {
   max-width: 800px;
   margin: 0 auto;
-  background: #333;
+  background: #111;
   border: 1px solid rgba(255,255,255,.06);
   border-radius: 8px;
   padding: 2.5rem;
@@ -799,7 +986,7 @@ section { padding: 5rem 0; }
   border-bottom: 1px solid rgba(174,194,64,.15);
 }
 .cta-section h2 { margin-bottom: .5rem; }
-.cta-section p { color: #aaa; margin-bottom: 2rem; }
+.cta-section p { color: #ddd; margin-bottom: 2rem; }
 
 .newsletter-form {
   display: flex;
@@ -810,10 +997,10 @@ section { padding: 5rem 0; }
 .newsletter-form input {
   flex: 1;
   padding: .8rem 1.25rem;
-  background: #333;
+  background: #111;
   border: 1px solid rgba(255,255,255,.1);
   border-radius: 4px;
-  color: #e0e0e0;
+  color: #fff;
   font-size: .9rem;
 }
 .newsletter-form input:focus { outline: none; border-color: #AEC240; }
@@ -823,7 +1010,7 @@ section { padding: 5rem 0; }
    FOOTER
    ======================================== */
 .footer {
-  background: #222;
+  background: #000;
   border-top: 1px solid rgba(255,255,255,.06);
   padding: 3.5rem 0 1.5rem;
 }
@@ -833,7 +1020,7 @@ section { padding: 5rem 0; }
   gap: 2.5rem;
   margin-bottom: 2.5rem;
 }
-.footer-about p { color: #888; font-size: .85rem; margin-top: .75rem; line-height: 1.6; }
+.footer-about p { color: #bbb; font-size: .85rem; margin-top: .75rem; line-height: 1.6; }
 .footer-logo {
   font-family: 'Poppins', sans-serif;
   font-size: 1.2rem;
@@ -846,11 +1033,11 @@ section { padding: 5rem 0; }
   font-size: .85rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #888;
+  color: #bbb;
   margin-bottom: 1rem;
 }
 .footer-col ul li { margin-bottom: .5rem; }
-.footer-col ul li a { color: #aaa; font-size: .85rem; transition: color .2s; }
+.footer-col ul li a { color: #ddd; font-size: .85rem; transition: color .2s; }
 .footer-col ul li a:hover { color: #AEC240; }
 
 .footer-bottom {
@@ -862,7 +1049,7 @@ section { padding: 5rem 0; }
   font-size: .8rem;
   color: #666;
 }
-.footer-bottom a { color: #888; display: inline-flex; align-items: center; gap: .4rem; }
+.footer-bottom a { color: #bbb; display: inline-flex; align-items: center; gap: .4rem; }
 .footer-bottom a:hover { color: #AEC240; }
 .footer-bottom .ipw-logo { height: 50px; width: auto; display: inline-block; filter: invert(1); transition: opacity .25s; }
 .footer-bottom a:hover .ipw-logo { opacity: .8; }
@@ -873,7 +1060,7 @@ section { padding: 5rem 0; }
 .page-header {
   padding: 8rem 0 3rem;
   text-align: center;
-  background: #222;
+  background: #000;
   border-bottom: 1px solid rgba(255,255,255,.06);
   position: relative;
   overflow: hidden;
@@ -883,10 +1070,10 @@ section { padding: 5rem 0; }
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: .2;
+  opacity: .4;
 }
 .page-header h1 { margin-bottom: .5rem; }
-.page-header p { color: #aaa; }
+.page-header p { color: #ddd; }
 
 /* ========================================
    SCROLL REVEAL
@@ -946,7 +1133,7 @@ section { padding: 5rem 0; }
 .modal-overlay.active { opacity: 1; visibility: visible; }
 
 .modal {
-  background: #333;
+  background: #111;
   border: 1px solid rgba(255,255,255,.08);
   border-radius: 12px;
   padding: 2.5rem;
@@ -968,7 +1155,7 @@ section { padding: 5rem 0; }
 }
 .modal-icon.error { background: rgba(229,57,53,.15); color: #e53935; }
 .modal h3 { margin-bottom: .5rem; }
-.modal p { color: #aaa; font-size: .9rem; margin-bottom: 1.5rem; }
+.modal p { color: #ddd; font-size: .9rem; margin-bottom: 1.5rem; }
 .modal .btn { min-width: 140px; }
 
 /* ========================================
@@ -995,7 +1182,7 @@ section { padding: 5rem 0; }
     right: -100%;
     width: 280px;
     height: 100vh;
-    background: #2E2E2E;
+    background: #0a0a0a;
     flex-direction: column;
     padding: 5rem 2rem 2rem;
     gap: 0;
@@ -1012,6 +1199,21 @@ section { padding: 5rem 0; }
   }
   .nav-links a::after { display: none; }
   .nav-cta { margin-top: 1rem; text-align: center; }
+  .nav-phone { margin-top: .5rem; justify-content: center; }
+
+  /* Order bar */
+  .order-bar { padding-top: calc(80px + 1.5rem); padding-bottom: 1.5rem; }
+  .order-columns { gap: 1.5rem; }
+
+  /* Food row */
+  .food-row-grid { grid-template-columns: 1fr; }
+  .food-row-item { aspect-ratio: 16/9; }
+
+  /* Name section */
+  .restaurant-name { font-size: 2.25rem; }
+
+  /* Food gallery */
+  .food-gallery-grid { grid-template-columns: 1fr 1fr; }
 
   /* Hero */
   .hero { min-height: 80vh; }
@@ -1047,6 +1249,7 @@ section { padding: 5rem 0; }
 
 /* Tel links — plain text on desktop, clickable on mobile */
 .tel-link { pointer-events: none; color: inherit; cursor: default; text-decoration: none; }
+.tel-link.phone-btn { pointer-events: auto; cursor: pointer; }
 @media (max-width: 768px) {
   .tel-link { pointer-events: auto; cursor: pointer; }
 }
@@ -1056,4 +1259,8 @@ section { padding: 5rem 0; }
   .gallery-grid { grid-template-columns: 1fr; }
   .order-btns { flex-direction: column; align-items: stretch; }
   .order-btn { width: 100%; min-width: 0; justify-content: center; }
+  .order-col-btns { flex-direction: column; }
+  .order-box-btn { font-size: .8rem; padding: .6rem 1.5rem; }
+  .food-gallery-grid { grid-template-columns: 1fr; }
+  .restaurant-name { font-size: 1.85rem; }
 }
