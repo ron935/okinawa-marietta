@@ -1170,9 +1170,9 @@ section { padding: 5rem 0; }
 
 @media (max-width: 768px) {
   html { font-size: 15px; }
-  h1 { font-size: 2.25rem; }
-  h2 { font-size: 1.75rem; }
-  section { padding: 3.5rem 0; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.6rem; }
+  section { padding: 2.5rem 0; }
 
   /* Nav mobile */
   .hamburger { display: flex; }
@@ -1201,19 +1201,29 @@ section { padding: 5rem 0; }
   .nav-cta { margin-top: 1rem; text-align: center; }
   .nav-phone { margin-top: .5rem; justify-content: center; }
 
-  /* Order bar */
-  .order-bar { padding-top: calc(80px + 1.5rem); padding-bottom: 1.5rem; }
-  .order-columns { gap: 1.5rem; }
+  /* Page header — tighter on mobile */
+  .page-header { padding: 6rem 0 2rem; }
+  .page-header h1 { font-size: 1.75rem; margin-bottom: .25rem; }
+  .page-header p { font-size: .9rem; }
 
-  /* Food row */
-  .food-row-grid { grid-template-columns: 1fr; }
-  .food-row-item { aspect-ratio: 16/9; }
+  /* Order bar */
+  .order-bar { padding-top: calc(80px + 1rem); padding-bottom: 1rem; }
+  .order-label { font-size: .85rem !important; margin-bottom: .5rem !important; }
+  .order-columns { gap: 1.5rem; }
+  .order-box-btn { padding: .65rem 1.5rem; font-size: .85rem; }
+
+  /* Food row — keep 3 columns on tablet, tighter */
+  .food-row-grid { grid-template-columns: repeat(3, 1fr); }
+  .food-row-item { aspect-ratio: 1/1; }
 
   /* Name section */
-  .restaurant-name { font-size: 2.25rem; }
+  .name-section { padding: 2rem 0; }
+  .restaurant-name { font-size: 2rem; margin-bottom: .75rem; }
+  .phone-btn { font-size: 1rem; padding: .65rem 1.5rem; }
 
-  /* Food gallery */
-  .food-gallery-grid { grid-template-columns: 1fr 1fr; }
+  /* Food gallery — 2-col with tighter gap */
+  .food-gallery-home { padding: 0 0 2rem; }
+  .food-gallery-grid { grid-template-columns: 1fr 1fr; gap: .75rem; }
 
   /* Hero */
   .hero { min-height: 80vh; }
@@ -1226,7 +1236,9 @@ section { padding: 5rem 0; }
 
   /* Grids */
   .features-grid { grid-template-columns: 1fr; }
+  .feature-card { padding: 1.5rem; }
   .hours-grid { grid-template-columns: 1fr; }
+  .hours-card { padding: 1.5rem; }
   .about-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
   .menu-items { grid-template-columns: 1fr; }
@@ -1234,14 +1246,28 @@ section { padding: 5rem 0; }
   .form-row { grid-template-columns: 1fr; }
   .form-row-3 { grid-template-columns: 1fr; }
 
-  /* Gallery + Showcase */
-  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  /* Gallery + Showcase — 2-col with tight gap */
+  .gallery-grid { grid-template-columns: 1fr 1fr; gap: .75rem; }
   .showcase-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
   .announce-bar p { font-size: .8rem; }
 
-  /* Footer */
-  .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  /* CTA — tighter */
+  .cta-section { padding: 2.5rem 0; }
+  .cta-section h2 { font-size: 1.4rem; }
+  .cta-section p { margin-bottom: 1rem; font-size: .9rem; }
+
+  /* Contact extras */
+  .map-wrap iframe { height: 220px; }
+  .contact-form { padding: 1.5rem; }
+
+  /* Footer — tighter */
+  .footer { padding: 2.5rem 0 1rem; }
+  .footer-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+  .footer-about p { font-size: .8rem; }
+  .footer-col h4 { margin-bottom: .6rem; }
+  .footer-col ul li { margin-bottom: .35rem; }
   .footer-bottom { flex-direction: column; gap: .5rem; text-align: center; }
+  .footer-bottom .ipw-logo { height: 36px; }
 
   /* Newsletter */
   .newsletter-form { flex-direction: column; }
@@ -1285,12 +1311,59 @@ section { padding: 5rem 0; }
 .order-dropdown-list a:hover { background: #AEC240; color: #1a1a1a; }
 
 @media (max-width: 480px) {
-  h1 { font-size: 1.85rem; }
-  .gallery-grid { grid-template-columns: 1fr; }
+  h1 { font-size: 1.65rem; }
+  h2 { font-size: 1.35rem; }
+  section { padding: 2rem 0; }
+  .container { padding: 0 1rem; }
+
+  /* Page header — even tighter */
+  .page-header { padding: 5.5rem 0 1.5rem; }
+  .page-header h1 { font-size: 1.5rem; }
+
+  /* Food row — 1-col but shorter aspect ratio */
+  .food-row-grid { grid-template-columns: 1fr; }
+  .food-row-item { aspect-ratio: 16/10; }
+
+  /* Name section */
+  .name-section { padding: 1.5rem 0; }
+  .restaurant-name { font-size: 1.65rem; margin-bottom: .5rem; }
+  .phone-btn { font-size: .9rem; padding: .6rem 1.25rem; }
+
+  /* Food gallery — keep 2-col with tight gap */
+  .food-gallery-home { padding: 0 0 1.5rem; }
+  .food-gallery-grid { grid-template-columns: 1fr 1fr; gap: .5rem; }
+  .food-gallery-item { border-radius: 6px; }
+
+  /* Gallery — keep 2-col */
+  .gallery-grid { grid-template-columns: 1fr 1fr; gap: .5rem; }
+  .gallery-item { border-radius: 6px; }
+
+  /* Order bar */
+  .order-bar { padding-top: calc(80px + .75rem); padding-bottom: .75rem; }
+  .order-col-btns { flex-direction: column; align-items: stretch; }
+  .order-box-btn { width: 100%; font-size: .85rem; padding: .7rem 1rem; text-align: center; }
   .order-btns { flex-direction: column; align-items: stretch; }
   .order-btn { width: 100%; min-width: 0; justify-content: center; }
-  .order-col-btns { flex-direction: column; }
-  .order-box-btn { font-size: .8rem; padding: .6rem 1.5rem; }
-  .food-gallery-grid { grid-template-columns: 1fr; }
-  .restaurant-name { font-size: 1.85rem; }
+
+  /* CTA */
+  .cta-section { padding: 2rem 0; }
+  .cta-section h2 { font-size: 1.25rem; }
+  .order-dropdown .btn { width: 100%; }
+  .order-dropdown { width: 100%; }
+
+  /* Contact */
+  .hours-card { padding: 1.25rem; }
+  .contact-form { padding: 1.25rem; }
+  .map-wrap iframe { height: 180px; }
+
+  /* Feature cards */
+  .feature-card { padding: 1.25rem; }
+  .feature-icon { width: 50px; height: 50px; font-size: 1.2rem; margin-bottom: 1rem; }
+
+  /* Footer */
+  .footer { padding: 2rem 0 .75rem; }
+  .footer-grid { gap: 1rem; }
+  .footer-logo-img { height: 45px; }
+  .footer-bottom .ipw-logo { height: 30px; }
+  .footer-bottom { font-size: .75rem; }
 }
