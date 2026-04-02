@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="css/styles.css?v=7179d9b1">
+  <link rel="stylesheet" href="css/styles.css?v=4bbbe53b">
 </head>
 <body>
 
@@ -100,7 +100,14 @@
       <h2>Ready to Order?</h2>
       <p>Skip the wait — order pickup or delivery online.</p>
       <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem;">
-        <a href="https://order.online/store/OkinawaHibachiandSushi-214505" target="_blank" class="btn btn-primary">Order Online</a>
+        <div class="order-dropdown">
+          <span class="btn btn-primary order-dropdown-btn" onclick="this.nextElementSibling.classList.toggle('open')">Order Online</span>
+          <div class="order-dropdown-list">
+            <a href="https://order.online/store/OkinawaHibachiandSushi-214505" target="_blank">ChowNow</a>
+            <a href="https://www.doordash.com/store/okinawa-hibachi-and-sushi-marietta-214505/" target="_blank">DoorDash</a>
+            <a href="https://www.ubereats.com/store/okinawa-hibachi-and-sushi-marietta/-2jIXX8yRQKUT7azbcEYQg" target="_blank">Uber Eats</a>
+          </div>
+        </div>
         <a href="tel:+17702180982" class="tel-link btn btn-secondary"><i class="fas fa-phone-alt"></i> &nbsp;(770) 218-0982</a>
       </div>
     </div>
